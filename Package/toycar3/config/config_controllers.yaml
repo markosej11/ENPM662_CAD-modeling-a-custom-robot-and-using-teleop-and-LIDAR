@@ -1,0 +1,31 @@
+# Robot name goes here
+toycar3: 
+  # default controller
+  joint_state_controller:
+    type: joint_state_controller/JointStateController
+    publish_rate: 50
+
+  # Controller 1
+  controller_rear: # change the name
+    type: velocity_controllers/JointVelocityController
+    joint: joint_rear_axle
+    pid : {p: 10000.0 , i: 1 , d: 40.0} 
+
+  controller_f_r: # change the name
+    type: effort_controllers/JointPositionController
+    joint: joint_f_r_female
+    pid : {p: 14000.0 , i: 1 , d: 30.0}
+    # pid : {p: 0.1 , i: 0.01 , d: 40.0} 
+
+  controller_f_l: # change the name
+    type: effort_controllers/JointPositionController
+    joint: joint_f_l_female
+    pid : {p: 14000.0 , i: 1 , d: 30.0}
+    # pid : {p: 0.1 , i: 1 , d: 0} 
+  # Controller 2
+  # Controller 3
+  # ....
+  # Controller n
+
+
+ 
